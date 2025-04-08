@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Случайный член экипажа</h1>
+<div class="crew-member">
+    <h2>{{ member.first_name }} {{ member.last_name }}</h2>
+    <img src="{{ member.photo_url }}" alt="Фото {{ member.first_name }} {{ member.last_name }}">
+    <h3>Специальности:</h3>
+    <ul>
+        {% for specialty in member.specialties|sort %}
+        <li>{{ specialty }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
